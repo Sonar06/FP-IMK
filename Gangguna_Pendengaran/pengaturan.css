@@ -1,758 +1,328 @@
 * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f5f5; }
-    .stitch-export-root {
-      position: relative;
-      width: 390px;
-      height: 884px;
-      overflow: hidden;
-      background: #ffffff;
-    }
-    
-    .halaman-setelan-terbaru-1 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 390px;
-      height: 884px;
-      background-color: #ffffff;
-    }
-    
-    .main-canvas-section-2 {
-      position: absolute;
-      left: 0px;
-      top: 88px;
-      width: 390px;
-      height: 344px;
-    }
-    
-    .bg-layer-3 {
-      position: absolute;
-      left: 20px;
-      top: 0px;
-      width: 350px;
-      height: 56px;
-      background-color: #f4f3f8;
-      border-radius: 12px;
-    }
-    
-    .layout-container-4 {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 148.58px;
-      height: 24px;
-    }
-    
-    .layout-container-5 {
-      position: absolute;
-      left: 0px;
-      top: 3.25px;
-      width: 18px;
-      height: 17.5px;
-    }
-    
-    .icon-ui-6 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 18px;
-      height: 17.5px;
-      overflow: hidden;
-    }
-    
-    .layout-container-7 {
-      position: absolute;
-      left: 34px;
-      top: 0px;
-      width: 114.58px;
-      height: 24px;
-    }
-    
-    .text-content-8 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 114.58px;
-      height: 24px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 16px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bg-layer-9 {
-      position: absolute;
-      left: 286px;
-      top: 16px;
-      width: 48px;
-      height: 24px;
-      background-color: #0058bc;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-10 {
-      position: absolute;
-      left: 28px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      background-color: #ffffff;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-11 {
-      position: absolute;
-      left: 20px;
-      top: 72px;
-      width: 350px;
-      height: 56px;
-      background-color: #f4f3f8;
-      border-radius: 12px;
-    }
-    
-    .layout-container-12 {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 100.03px;
-      height: 24px;
-    }
-    
-    .layout-container-13 {
-      position: absolute;
-      left: 0px;
-      top: 3px;
-      width: 24px;
-      height: 18px;
-    }
-    
-    .icon-ui-14 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 24px;
-      height: 18px;
-      overflow: hidden;
-    }
-    
-    .layout-container-15 {
-      position: absolute;
-      left: 40px;
-      top: 0px;
-      width: 60.03px;
-      height: 24px;
-    }
-    
-    .text-content-16 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 60.03px;
-      height: 24px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 16px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bg-layer-17 {
-      position: absolute;
-      left: 286px;
-      top: 16px;
-      width: 48px;
-      height: 24px;
-      background-color: #0058bc;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-18 {
-      position: absolute;
-      left: 28px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      background-color: #ffffff;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-19 {
-      position: absolute;
-      left: 20px;
-      top: 144px;
-      width: 350px;
-      height: 56px;
-      background-color: #f4f3f8;
-      border-radius: 12px;
-    }
-    
-    .layout-container-20 {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 102.64px;
-      height: 24px;
-    }
-    
-    .layout-container-21 {
-      position: absolute;
-      left: 0px;
-      top: 2px;
-      width: 16px;
-      height: 20px;
-    }
-    
-    .icon-ui-22 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 16px;
-      height: 20px;
-      overflow: hidden;
-    }
-    
-    .layout-container-23 {
-      position: absolute;
-      left: 32px;
-      top: 0px;
-      width: 70.64px;
-      height: 24px;
-    }
-    
-    .text-content-24 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 70.64px;
-      height: 24px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 16px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bg-layer-25 {
-      position: absolute;
-      left: 286px;
-      top: 16px;
-      width: 48px;
-      height: 24px;
-      background-color: #e3e2e7;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-26 {
-      position: absolute;
-      left: 4px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      background-color: #ffffff;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-27 {
-      position: absolute;
-      left: 20px;
-      top: 216px;
-      width: 350px;
-      height: 56px;
-      background-color: #f4f3f8;
-      border-radius: 12px;
-    }
-    
-    .layout-container-28 {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 134.61px;
-      height: 24px;
-    }
-    
-    .layout-container-29 {
-      position: absolute;
-      left: 0px;
-      top: 2.5px;
-      width: 14px;
-      height: 19px;
-    }
-    
-    .icon-ui-30 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 14px;
-      height: 19px;
-      overflow: hidden;
-    }
-    
-    .layout-container-31 {
-      position: absolute;
-      left: 30px;
-      top: 0px;
-      width: 104.61px;
-      height: 24px;
-    }
-    
-    .text-content-32 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 104.61px;
-      height: 24px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 16px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bg-layer-33 {
-      position: absolute;
-      left: 286px;
-      top: 16px;
-      width: 48px;
-      height: 24px;
-      background-color: #0058bc;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-34 {
-      position: absolute;
-      left: 28px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      background-color: #ffffff;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-35 {
-      position: absolute;
-      left: 20px;
-      top: 288px;
-      width: 350px;
-      height: 56px;
-      background-color: #f4f3f8;
-      border-radius: 12px;
-    }
-    
-    .layout-container-36 {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      width: 80.73px;
-      height: 24px;
-    }
-    
-    .layout-container-37 {
-      position: absolute;
-      left: 0px;
-      top: 2px;
-      width: 16px;
-      height: 20px;
-    }
-    
-    .icon-ui-38 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 16px;
-      height: 20px;
-      overflow: hidden;
-    }
-    
-    .layout-container-39 {
-      position: absolute;
-      left: 32px;
-      top: 0px;
-      width: 48.73px;
-      height: 24px;
-    }
-    
-    .text-content-40 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 48.73px;
-      height: 24px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 16px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 400;
-      line-height: 24px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bg-layer-41 {
-      position: absolute;
-      left: 286px;
-      top: 16px;
-      width: 48px;
-      height: 24px;
-      background-color: #0058bc;
-      border-radius: 9999px;
-    }
-    
-    .bg-layer-42 {
-      position: absolute;
-      left: 28px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      background-color: #ffffff;
-      border-radius: 9999px;
-    }
-    
-    .top-appbar-43 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 390px;
-      height: 64px;
-      background-color: #faf9fe;
-    }
-    
-    .layout-container-44 {
-      position: absolute;
-      left: 20px;
-      top: 12px;
-      width: 120.48px;
-      height: 40px;
-    }
-    
-    .btn-action-45 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 40px;
-      height: 40px;
-      border-radius: 9999px;
-    }
-    
-    .layout-container-46 {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      width: 16px;
-      height: 16px;
-    }
-    
-    .icon-ui-47 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 16px;
-      height: 16px;
-      overflow: hidden;
-    }
-    
-    .title-1-48 {
-      position: absolute;
-      left: 48px;
-      top: 6px;
-      width: 72.48px;
-      height: 28px;
-    }
-    
-    .text-content-49 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 72.48px;
-      height: 28px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 20px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 600;
-      line-height: 28px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #1a1b1f;
-    }
-    
-    .bottom-navbar-50 {
-      position: absolute;
-      left: 0px;
-      top: 818px;
-      width: 390px;
-      height: 66px;
-      background-color: #ffffff;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      box-shadow: 0px -4px 12px 0px rgba(0, 0, 0, 0.05);
-    }
-    
-    .link-active-tab-beranda-51 {
-      position: absolute;
-      left: 25.66px;
-      top: 11px;
-      width: 76.25px;
-      height: 44px;
-    }
-    
-    .margin-52 {
-      position: absolute;
-      left: 30.12px;
-      top: 4px;
-      width: 16px;
-      height: 20px;
-    }
-    
-    .icon-ui-53 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 16px;
-      height: 18px;
-      overflow: hidden;
-    }
-    
-    .layout-container-54 {
-      position: absolute;
-      left: 16px;
-      top: 24px;
-      width: 44.25px;
-      height: 16px;
-    }
-    
-    .text-content-55 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 44.25px;
-      height: 16px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 11px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 600;
-      line-height: 16px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #414755;
-    }
-    
-    .link-inactive-tab-cari-56 {
-      position: absolute;
-      left: 121.21px;
-      top: 9px;
-      width: 53.75px;
-      height: 48px;
-    }
-    
-    .margin-57 {
-      position: absolute;
-      left: 17.88px;
-      top: 4px;
-      width: 18px;
-      height: 20px;
-    }
-    
-    .icon-ui-58 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 18px;
-      height: 18px;
-      overflow: hidden;
-    }
-    
-    .margin-59 {
-      position: absolute;
-      left: 16px;
-      top: 24px;
-      width: 21.75px;
-      height: 20px;
-    }
-    
-    .text-content-60 {
-      position: absolute;
-      left: 0px;
-      top: 4px;
-      width: 21.75px;
-      height: 16px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 11px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 600;
-      line-height: 16px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #414755;
-    }
-    
-    .link-inactive-tab-riwayat-61 {
-      position: absolute;
-      left: 194.26px;
-      top: 8px;
-      width: 76.61px;
-      height: 50px;
-    }
-    
-    .margin-62 {
-      position: absolute;
-      left: 28.31px;
-      top: 4px;
-      width: 20px;
-      height: 22px;
-    }
-    
-    .icon-ui-63 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 20px;
-      height: 20px;
-      overflow: hidden;
-    }
-    
-    .margin-64 {
-      position: absolute;
-      left: 16px;
-      top: 26px;
-      width: 44.61px;
-      height: 20px;
-    }
-    
-    .text-content-65 {
-      position: absolute;
-      left: 0px;
-      top: 4px;
-      width: 44.61px;
-      height: 16px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 11px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 600;
-      line-height: 16px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #414755;
-    }
-    
-    .link-inactive-tab-setelan-66 {
-      position: absolute;
-      left: 290.17px;
-      top: 8px;
-      width: 71.88px;
-      height: 50px;
-      background-color: #6664e4;
-      border-radius: 9999px;
-    }
-    
-    .margin-67 {
-      position: absolute;
-      left: 25.89px;
-      top: 4px;
-      width: 20.1px;
-      height: 22px;
-    }
-    
-    .icon-ui-68 {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 20.1px;
-      height: 20px;
-      overflow: hidden;
-    }
-    
-    .margin-69 {
-      position: absolute;
-      left: 16px;
-      top: 26px;
-      width: 39.88px;
-      height: 20px;
-    }
-    
-    .text-content-70 {
-      position: absolute;
-      left: 0px;
-      top: 4px;
-      width: 39.88px;
-      height: 16px;
-      
-      display: block;
-      box-sizing: border-box;
-      margin: 0;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-break: break-word;
-      font-size: 11px;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 600;
-      line-height: 16px;
-      letter-spacing: 0px;
-      text-align: left;
-      color: #fffbff;
-    }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f5f5; }
+
+.stitch-export-root {
+  position: relative;
+  width: 390px;
+  height: 884px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.halaman-setelan-terbaru-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 390px;
+  height: 884px;
+  background-color: #ffffff;
+}
+
+/* CONTAINER DAFTAR SETELAN */
+.main-canvas-section-2 {
+  position: absolute;
+  left: 0px;
+  top: 80px; /* Diturunkan sedikit agar tidak mepet header */
+  width: 390px;
+  height: calc(100% - 160px);
+  padding: 0 20px;
+  overflow-y: auto; /* Bisa di-scroll jika menunya banyak */
+}
+
+/* CUSTOM BARIS PENGATURAN (TOGGLE) */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f3f8;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.setting-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.setting-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #1a1b1f;
+}
+
+/* TOGGLE SWITCH STYLING */
+.toggle-mock {
+  width: 48px;
+  height: 24px;
+  background-color: #e3e2e7;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.toggle-mock::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  transition: transform 0.25s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* STATE TOGGLE AKTIF */
+.toggle-mock.active-toggle {
+  background-color: #0058bc;
+}
+
+.toggle-mock.active-toggle::after {
+  transform: translateX(24px);
+}
+
+/* HEADER TOP APP BAR */
+.top-appbar-43 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 390px;
+  height: 64px;
+  background-color: #faf9fe;
+  z-index: 10; /* Menjamin header berada di layer paling atas */
+  border-bottom: 1px solid #e3e2e7;
+}
+
+.layout-container-44 {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-action-45 {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+
+.btn-action-45:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.layout-container-46 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-1-48 {
+  position: absolute;
+  left: 48px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.text-content-49 {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+  color: #1a1b1f;
+}
+
+/* BOTTOM NAV BAR */
+.bottom-navbar-50 {
+  position: absolute;
+  left: 0px;
+  top: 818px;
+  width: 390px;
+  height: 66px;
+  background-color: #ffffff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 0px -4px 12px 0px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.link-active-tab-beranda-51 {
+  position: absolute;
+  left: 25.66px;
+  top: 11px;
+  width: 76.25px;
+  height: 44px;
+}
+
+.margin-52 {
+  position: absolute;
+  left: 30.12px;
+  top: 4px;
+  width: 16px;
+  height: 20px;
+}
+
+.icon-ui-53 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 16px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.layout-container-54 {
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  width: 44.25px;
+  height: 16px;
+}
+
+.text-content-55 {
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  color: #414755;
+}
+
+.link-inactive-tab-cari-56 {
+  position: absolute;
+  left: 121.21px;
+  top: 9px;
+  width: 53.75px;
+  height: 48px;
+}
+
+.margin-57 {
+  position: absolute;
+  left: 17.88px;
+  top: 4px;
+  width: 18px;
+  height: 20px;
+}
+
+.icon-ui-58 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.margin-59 {
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  width: 21.75px;
+  height: 20px;
+}
+
+.text-content-60 {
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  color: #414755;
+}
+
+.link-inactive-tab-riwayat-61 {
+  position: absolute;
+  left: 194.26px;
+  top: 8px;
+  width: 76.61px;
+  height: 50px;
+}
+
+.margin-62 {
+  position: absolute;
+  left: 28.31px;
+  top: 4px;
+  width: 20px;
+  height: 22px;
+}
+
+.icon-ui-63 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.margin-64 {
+  position: absolute;
+  left: 16px;
+  top: 26px;
+  width: 44.61px;
+  height: 20px;
+}
+
+.text-content-65 {
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  color: #414755;
+}
+
+.link-inactive-tab-setelan-66 {
+  position: absolute;
+  left: 290.17px;
+  top: 8px;
+  width: 71.88px;
+  height: 50px;
+  background-color: #6664e4;
+  border-radius: 9999px;
+}
+
+.margin-67 {
+  position: absolute;
+  left: 25.89px;
+  top: 4px;
+  width: 20.1px;
+  height: 22px;
+}
+
+.icon-ui-68 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 20.1px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.margin-69 {
+  position: absolute;
+  left: 16px;
+  top: 26px;
+  width: 39.88px;
+  height: 20px;
+}
+
+.text-content-70 {
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  color: #fffbff;
+}

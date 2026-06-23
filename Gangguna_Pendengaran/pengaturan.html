@@ -42,6 +42,12 @@
         }, 300);
       }
 
+      // Fungsi interaktif toggle switch yang aman dari konflik click redirect
+      function toggleSwitch(element, event) {
+        if (event) event.stopPropagation();
+        element.classList.toggle("active-toggle");
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         var routes = {
           kemana: "cari_rute.html",
@@ -86,14 +92,14 @@
                 continue;
               }
 
-              // MENJADIKAN SELURUH TOMBOL BERSERTA IKONNYA BISA DIKLIK
               var curr = node.parentElement;
+              if (curr && curr.closest && curr.closest(".setting-row")) {
+                continue;
+              }
+
               while (curr && curr.tagName !== "BODY") {
                 var rect = curr.getBoundingClientRect();
 
-                // Hentikan peluasan area klik jika ukurannya lebih lebar dari 360px DAN tinggi > 60px
-                // (Artinya kita sudah mencapai kontainer luar seperti seluruh Bottom Nav atau Layar)
-                // Pengecualian jika ini baru level pertama/kedua (biar tombol panjang tetap aman)
                 if (
                   rect.width >= 370 &&
                   rect.height >= 70 &&
@@ -115,380 +121,37 @@
             }
           }
         }
+
+        document.querySelectorAll(".toggle-mock").forEach(function (toggle) {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            toggleSwitch(this);
+          });
+        });
+
+        document.querySelectorAll(".setting-row").forEach(function (row) {
+          row.addEventListener("click", function (e) {
+            if (e.target.closest(".toggle-mock")) return;
+            var toggle = row.querySelector(".toggle-mock");
+            if (toggle) {
+              toggleSwitch(toggle);
+            }
+          });
+        });
       });
     </script>
   </head>
   <body>
     <main class="stitch-export-root">
-      <div
-        class="halaman-setelan-terbaru-1"
-        data-stitch-node-id="node-1"
-        data-stitch-node-type="FRAME"
-        data-stitch-node-name="Halaman Setelan Terbaru"
-        data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1},{"type":"SOLID","color":{"r":0.9804,"g":0.9765,"b":0.9961,"a":1},"opacity":1}]'
-      >
-        <div
-          class="main-canvas-section-2"
-          data-stitch-node-id="node-2"
-          data-stitch-node-type="FRAME"
-          data-stitch-node-name="Main Canvas → Section"
-        >
-          <div
-            class="bg-layer-3"
-            data-stitch-node-id="node-3"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Background"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]'
-          >
-            <div
-              class="layout-container-4"
-              data-stitch-node-id="node-4"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <div
-                class="layout-container-5"
-                data-stitch-node-id="node-5"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <svg
-                  class="icon-ui-6"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 17.5V15.45C12.5 15.0167 13.7083 14.1833 14.625 12.95C15.5417 11.7167 16 10.3167 16 8.75C16 7.18333 15.5417 5.78333 14.625 4.55C13.7083 3.31667 12.5 2.48333 11 2.05V0C13.0667 0.466667 14.75 1.5125 16.05 3.1375C17.35 4.7625 18 6.63333 18 8.75C18 10.8667 17.35 12.7375 16.05 14.3625C14.75 15.9875 13.0667 17.0333 11 17.5ZM0 11.775V5.775H4L9 0.775V16.775L4 11.775H0ZM11 12.775V4.725C11.7833 5.09167 12.3958 5.64167 12.8375 6.375C13.2792 7.10833 13.5 7.90833 13.5 8.775C13.5 9.625 13.2792 10.4125 12.8375 11.1375C12.3958 11.8625 11.7833 12.4083 11 12.775ZM7 5.625L4.85 7.775H2V9.775H4.85L7 11.925V5.625Z"
-                    fill="#0058BC"
-                  />
-                </svg>
-              </div>
-              <div
-                class="layout-container-7"
-                data-stitch-node-id="node-6"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <span
-                  class="text-content-8"
-                  data-stitch-node-id="node-7"
-                  data-stitch-node-type="TEXT"
-                  data-stitch-node-name="Text"
-                  data-stitch-text="true"
-                  data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                  >Panduan Suara</span
-                >
-              </div>
-            </div>
-            <div
-              class="bg-layer-9"
-              data-stitch-node-id="node-8"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Background"
-              data-stitch-fills='[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]'
-            >
-              <div
-                class="bg-layer-10"
-                data-stitch-node-id="node-9"
-                data-stitch-node-type="RECTANGLE"
-                data-stitch-node-name="Background"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-              ></div>
-            </div>
-          </div>
-          <div
-            class="bg-layer-11"
-            data-stitch-node-id="node-10"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Background"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]'
-          >
-            <div
-              class="layout-container-12"
-              data-stitch-node-id="node-11"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <div
-                class="layout-container-13"
-                data-stitch-node-id="node-12"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <svg
-                  class="icon-ui-14"
-                  width="24"
-                  height="18"
-                  viewBox="0 0 24 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 18C7.45 18 6.97917 17.8042 6.5875 17.4125C6.19583 17.0208 6 16.55 6 16V2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H8ZM16 16V2H8V16H16ZM12 5C12.2833 5 12.5208 4.90417 12.7125 4.7125C12.9042 4.52083 13 4.28333 13 4C13 3.71667 12.9042 3.47917 12.7125 3.2875C12.5208 3.09583 12.2833 3 12 3C11.7167 3 11.4792 3.09583 11.2875 3.2875C11.0958 3.47917 11 3.71667 11 4C11 4.28333 11.0958 4.52083 11.2875 4.7125C11.4792 4.90417 11.7167 5 12 5ZM0 12V6H2V12H0ZM3 14V4H5V14H3ZM22 12V6H24V12H22ZM19 14V4H21V14H19ZM8 16V2V16Z"
-                    fill="#0058BC"
-                  />
-                </svg>
-              </div>
-              <div
-                class="layout-container-15"
-                data-stitch-node-id="node-13"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <span
-                  class="text-content-16"
-                  data-stitch-node-id="node-14"
-                  data-stitch-node-type="TEXT"
-                  data-stitch-node-name="Text"
-                  data-stitch-text="true"
-                  data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                  >Getaran</span
-                >
-              </div>
-            </div>
-            <div
-              class="bg-layer-17"
-              data-stitch-node-id="node-15"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Background"
-              data-stitch-fills='[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]'
-            >
-              <div
-                class="bg-layer-18"
-                data-stitch-node-id="node-16"
-                data-stitch-node-type="RECTANGLE"
-                data-stitch-node-name="Background"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-              ></div>
-            </div>
-          </div>
-          <div
-            class="bg-layer-19"
-            data-stitch-node-id="node-17"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Background"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]'
-          >
-            <div
-              class="layout-container-20"
-              data-stitch-node-id="node-18"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <div
-                class="layout-container-21"
-                data-stitch-node-id="node-19"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <svg
-                  class="icon-ui-22"
-                  width="16"
-                  height="20"
-                  viewBox="0 0 16 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 17V15H2V8C2 6.61667 2.41667 5.3875 3.25 4.3125C4.08333 3.2375 5.16667 2.53333 6.5 2.2V1.5C6.5 1.08333 6.64583 0.729167 6.9375 0.4375C7.22917 0.145833 7.58333 0 8 0C8.41667 0 8.77083 0.145833 9.0625 0.4375C9.35417 0.729167 9.5 1.08333 9.5 1.5V2.2C10.8333 2.53333 11.9167 3.2375 12.75 4.3125C13.5833 5.3875 14 6.61667 14 8V15H16V17H0ZM8 20C7.45 20 6.97917 19.8042 6.5875 19.4125C6.19583 19.0208 6 18.55 6 18H10C10 18.55 9.80417 19.0208 9.4125 19.4125C9.02083 19.8042 8.55 20 8 20ZM4 15H12V8C12 6.9 11.6083 5.95833 10.825 5.175C10.0417 4.39167 9.1 4 8 4C6.9 4 5.95833 4.39167 5.175 5.175C4.39167 5.95833 4 6.9 4 8V15Z"
-                    fill="#0058BC"
-                  />
-                </svg>
-              </div>
-              <div
-                class="layout-container-23"
-                data-stitch-node-id="node-20"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <span
-                  class="text-content-24"
-                  data-stitch-node-id="node-21"
-                  data-stitch-node-type="TEXT"
-                  data-stitch-node-name="Text"
-                  data-stitch-text="true"
-                  data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                  >Notifikasi</span
-                >
-              </div>
-            </div>
-            <div
-              class="bg-layer-25"
-              data-stitch-node-id="node-22"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Background"
-              data-stitch-fills='[{"type":"SOLID","color":{"r":0.8902,"g":0.8863,"b":0.9059,"a":1},"opacity":1}]'
-            >
-              <div
-                class="bg-layer-26"
-                data-stitch-node-id="node-23"
-                data-stitch-node-type="RECTANGLE"
-                data-stitch-node-name="Background"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-              ></div>
-            </div>
-          </div>
-          <div
-            class="bg-layer-27"
-            data-stitch-node-id="node-24"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Background"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]'
-          >
-            <div
-              class="layout-container-28"
-              data-stitch-node-id="node-25"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <div
-                class="layout-container-29"
-                data-stitch-node-id="node-26"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <svg
-                  class="icon-ui-30"
-                  width="14"
-                  height="19"
-                  viewBox="0 0 14 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 12C6.16667 12 5.45833 11.7083 4.875 11.125C4.29167 10.5417 4 9.83333 4 9V3C4 2.16667 4.29167 1.45833 4.875 0.875C5.45833 0.291667 6.16667 0 7 0C7.83333 0 8.54167 0.291667 9.125 0.875C9.70833 1.45833 10 2.16667 10 3V9C10 9.83333 9.70833 10.5417 9.125 11.125C8.54167 11.7083 7.83333 12 7 12ZM6 19V15.925C4.26667 15.6917 2.83333 14.9167 1.7 13.6C0.566667 12.2833 0 10.75 0 9H2C2 10.3833 2.4875 11.5625 3.4625 12.5375C4.4375 13.5125 5.61667 14 7 14C8.38333 14 9.5625 13.5125 10.5375 12.5375C11.5125 11.5625 12 10.3833 12 9H14C14 10.75 13.4333 12.2833 12.3 13.6C11.1667 14.9167 9.73333 15.6917 8 15.925V19H6ZM7 10C7.28333 10 7.52083 9.90417 7.7125 9.7125C7.90417 9.52083 8 9.28333 8 9V3C8 2.71667 7.90417 2.47917 7.7125 2.2875C7.52083 2.09583 7.28333 2 7 2C6.71667 2 6.47917 2.09583 6.2875 2.2875C6.09583 2.47917 6 2.71667 6 3V9C6 9.28333 6.09583 9.52083 6.2875 9.7125C6.47917 9.90417 6.71667 10 7 10Z"
-                    fill="#0058BC"
-                  />
-                </svg>
-              </div>
-              <div
-                class="layout-container-31"
-                data-stitch-node-id="node-27"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <span
-                  class="text-content-32"
-                  data-stitch-node-id="node-28"
-                  data-stitch-node-type="TEXT"
-                  data-stitch-node-name="Text"
-                  data-stitch-text="true"
-                  data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                  >Deteksi Suara</span
-                >
-              </div>
-            </div>
-            <div
-              class="bg-layer-33"
-              data-stitch-node-id="node-29"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Background"
-              data-stitch-fills='[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]'
-            >
-              <div
-                class="bg-layer-34"
-                data-stitch-node-id="node-30"
-                data-stitch-node-type="RECTANGLE"
-                data-stitch-node-name="Background"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-              ></div>
-            </div>
-          </div>
-          <div
-            class="bg-layer-35"
-            data-stitch-node-id="node-31"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Background"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]'
-          >
-            <div
-              class="layout-container-36"
-              data-stitch-node-id="node-32"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <div
-                class="layout-container-37"
-                data-stitch-node-id="node-33"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <svg
-                  class="icon-ui-38"
-                  width="16"
-                  height="20"
-                  viewBox="0 0 16 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 10C8.55 10 9.02083 9.80417 9.4125 9.4125C9.80417 9.02083 10 8.55 10 8C10 7.45 9.80417 6.97917 9.4125 6.5875C9.02083 6.19583 8.55 6 8 6C7.45 6 6.97917 6.19583 6.5875 6.5875C6.19583 6.97917 6 7.45 6 8C6 8.55 6.19583 9.02083 6.5875 9.4125C6.97917 9.80417 7.45 10 8 10ZM8 17.35C10.0333 15.4833 11.5417 13.7875 12.525 12.2625C13.5083 10.7375 14 9.38333 14 8.2C14 6.38333 13.4208 4.89583 12.2625 3.7375C11.1042 2.57917 9.68333 2 8 2C6.31667 2 4.89583 2.57917 3.7375 3.7375C2.57917 4.89583 2 6.38333 2 8.2C2 9.38333 2.49167 10.7375 3.475 12.2625C4.45833 13.7875 5.96667 15.4833 8 17.35ZM8 20C5.31667 17.7167 3.3125 15.5958 1.9875 13.6375C0.6625 11.6792 0 9.86667 0 8.2C0 5.7 0.804167 3.70833 2.4125 2.225C4.02083 0.741667 5.88333 0 8 0C10.1167 0 11.9792 0.741667 13.5875 2.225C15.1958 3.70833 16 5.7 16 8.2C16 9.86667 15.3375 11.6792 14.0125 13.6375C12.6875 15.5958 10.6833 17.7167 8 20Z"
-                    fill="#0058BC"
-                  />
-                </svg>
-              </div>
-              <div
-                class="layout-container-39"
-                data-stitch-node-id="node-34"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
-                <span
-                  class="text-content-40"
-                  data-stitch-node-id="node-35"
-                  data-stitch-node-type="TEXT"
-                  data-stitch-node-name="Text"
-                  data-stitch-text="true"
-                  data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                  >Lokasi</span
-                >
-              </div>
-            </div>
-            <div
-              class="bg-layer-41"
-              data-stitch-node-id="node-36"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Background"
-              data-stitch-fills='[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]'
-            >
-              <div
-                class="bg-layer-42"
-                data-stitch-node-id="node-37"
-                data-stitch-node-type="RECTANGLE"
-                data-stitch-node-name="Background"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-              ></div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="top-appbar-43"
-          data-stitch-node-id="node-38"
-          data-stitch-node-type="FRAME"
-          data-stitch-node-name="Header - TopAppBar"
-          data-stitch-fills='[{"type":"SOLID","color":{"r":0.9804,"g":0.9765,"b":0.9961,"a":1},"opacity":1}]'
-        >
-          <div
-            class="layout-container-44"
-            data-stitch-node-id="node-39"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Container"
-          >
+      <div class="halaman-setelan-terbaru-1">
+        <div class="top-appbar-43">
+          <div class="layout-container-44">
             <div
               class="btn-action-45"
-              data-stitch-node-id="node-40"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Button"
+              onclick="go('beranda.html')"
+              style="cursor: pointer"
             >
-              <div
-                class="layout-container-46"
-                data-stitch-node-id="node-41"
-                data-stitch-node-type="FRAME"
-                data-stitch-node-name="Container"
-              >
+              <div class="layout-container-46">
                 <svg
                   class="icon-ui-47"
                   width="16"
@@ -504,43 +167,131 @@
                 </svg>
               </div>
             </div>
-            <div
-              class="title-1-48"
-              data-stitch-node-id="node-42"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Heading 1"
-            >
-              <span
-                class="text-content-49"
-                data-stitch-node-id="node-43"
-                data-stitch-node-type="TEXT"
-                data-stitch-node-name="Text"
-                data-stitch-text="true"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]'
-                >Setelan</span
-              >
+            <div class="title-1-48">
+              <span class="text-content-49">Setelan</span>
             </div>
           </div>
         </div>
-        <div
-          class="bottom-navbar-50"
-          data-stitch-node-id="node-44"
-          data-stitch-node-type="FRAME"
-          data-stitch-node-name="BottomNavBar"
-          data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]'
-        >
-          <div
-            class="link-active-tab-beranda-51"
-            data-stitch-node-id="node-45"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Link - Active Tab: Beranda"
-          >
+
+        <div class="main-canvas-section-2">
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 17.5V15.45C12.5 15.0167 13.7083 14.1833 14.625 12.95C15.5417 11.7167 16 10.3167 16 8.75C16 7.18333 15.5417 5.78333 14.625 4.55C13.7083 3.31667 12.5 2.48333 11 2.05V0C13.0667 0.466667 14.75 1.5125 16.05 3.1375C17.35 4.7625 18 6.63333 18 8.75C18 10.8667 17.35 12.7375 16.05 14.3625C14.75 15.9875 13.0667 17.0333 11 17.5ZM0 11.775V5.775H4L9 0.775V16.775L4 11.775H0ZM11 12.775V4.725C11.7833 5.09167 12.3958 5.64167 12.8375 6.375C13.2792 7.10833 13.5 7.90833 13.5 8.775C13.5 9.625 13.2792 10.4125 12.8375 11.1375C12.3958 11.8625 11.7833 12.4083 11 12.775ZM7 5.625L4.85 7.775H2V9.775H4.85L7 11.925V5.625Z"
+                  fill="#0058BC"
+                />
+              </svg>
+              <h4>Panduan Suara</h4>
+            </div>
+            <div class="toggle-mock active-toggle"></div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7 2V13H10V22L17 10H13L16 2H7Z" fill="#0058BC" />
+              </svg>
+              <h4>Panduan Sinyal Flash</h4>
+            </div>
+            <div class="toggle-mock active-toggle"></div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="24"
+                height="18"
+                viewBox="0 0 24 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 18C7.45 18 6.97917 17.8042 6.5875 17.4125C6.19583 17.0208 6 16.55 6 16V2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H8ZM16 16V2H8V16H16ZM12 5C12.2833 5 12.5208 4.90417 12.7125 4.7125C12.9042 4.52083 13 4.28333 13 4C13 3.71667 12.9042 3.47917 12.7125 3.2875C12.5208 3.09583 12.2833 3 12 3C11.7167 3 11.4792 3.09583 11.2875 3.2875C11.0958 3.47917 11 3.71667 11 4C11 4.28333 11.0958 4.52083 11.2875 4.7125C11.4792 4.90417 11.7167 5 12 5ZM0 12V6H2V12H0ZM3 14V4H5V14H3ZM22 12V6H24V12H22ZM19 14V4H21V14H19ZM8 16V2V16Z"
+                  fill="#0058BC"
+                />
+              </svg>
+              <h4>Getaran</h4>
+            </div>
+            <div class="toggle-mock"></div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 17V15H2V8C2 6.61667 2.41667 5.3875 3.25 4.3125C4.08333 3.2375 5.16667 2.53333 6.5 2.2V1.5C6.5 1.08333 6.64583 0.729167 6.9375 0.4375C7.22917 0.145833 7.58333 0 8 0C8.41667 0 8.77083 0.145833 9.0625 0.4375C9.35417 0.729167 9.5 1.08333 9.5 1.5V2.2C10.8333 2.53333 11.9167 3.2375 12.75 4.3125C13.5833 5.3875 14 6.61667 14 8V15H16V17H0ZM8 20C7.45 20 6.97917 19.8042 6.5875 19.4125C6.19583 19.0208 6 18.55 6 18H10C10 18.55 9.80417 19.0208 9.4125 19.4125C9.02083 19.8042 8.55 20 8 20ZM4 15H12V8C12 6.9 11.6083 5.95833 10.825 5.175C10.0417 4.39167 9.1 4 8 4C6.9 4 5.95833 4.39167 5.175 5.175C4.39167 5.95833 4 6.9 4 8V15Z"
+                  fill="#0058BC"
+                />
+              </svg>
+              <h4>Notifikasi</h4>
+            </div>
+            <div class="toggle-mock active-toggle"></div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="14"
+                height="19"
+                viewBox="0 0 14 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 12C6.16667 12 5.45833 11.7083 4.875 11.125C4.29167 10.5417 4 9.83333 4 9V3C4 2.16667 4.29167 1.45833 4.875 0.875C5.45833 0.291667 6.16667 0 7 0C7.83333 0 8.54167 0.291667 9.125 0.875C9.70833 1.45833 10 2.16667 10 3V9C10 9.83333 9.70833 10.5417 9.125 11.125C8.54167 11.7083 7.83333 12 7 12ZM6 19V15.925C4.26667 15.6917 2.83333 14.9167 1.7 13.6C0.566667 12.2833 0 10.75 0 9H2C2 10.3833 2.4875 11.5625 3.4625 12.5375C4.4375 13.5125 5.61667 14 7 14C8.38333 14 9.5625 13.5125 10.5375 12.5375C11.5125 11.5625 12 10.3833 12 9H14C14 10.75 13.4333 12.2833 12.3 13.6C11.1667 14.9167 9.73333 15.6917 8 15.925V19H6ZM7 10C7.28333 10 7.52083 9.90417 7.7125 9.7125C7.90417 9.52083 8 9.28333 8 9V3C8 2.71667 7.90417 2.47917 7.7125 2.2875C7.52083 2.09583 7.28333 2 7 2C6.71667 2 6.47917 2.09583 6.2875 2.2875C6.09583 2.47917 6 2.71667 6 3V9C6 9.28333 6.09583 9.52083 6.2875 9.7125C6.47917 9.90417 6.71667 10 7 10Z"
+                  fill="#0058BC"
+                />
+              </svg>
+              <h4>Deteksi Suara</h4>
+            </div>
+            <div class="toggle-mock active-toggle"></div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 10C8.55 10 9.02083 9.80417 9.4125 9.4125C9.80417 9.02083 10 8.55 10 8C10 7.45 9.80417 6.97917 9.4125 6.5875C9.02083 6.19583 8.55 6 8 6C7.45 6 6.97917 6.19583 6.5875 6.5875C6.19583 6.97917 6 7.45 6 8C6 8.55 6.19583 9.02083 6.5875 9.4125C6.97917 9.80417 7.45 10 8 10ZM8 17.35C10.0333 15.4833 11.5417 13.7875 12.525 12.2625C13.5083 10.7375 14 9.38333 14 8.2C14 6.38333 13.4208 4.89583 12.2625 3.7375C11.1042 2.57917 9.68333 2 8 2C6.31667 2 4.89583 2.57917 3.7375 3.7375C2.57917 4.89583 2 6.38333 2 8.2C2 9.38333 2.49167 10.7375 3.475 12.2625C4.45833 13.7875 5.96667 15.4833 8 17.35ZM8 20C5.31667 17.7167 3.3125 15.5958 1.9875 13.6375C0.6625 11.6792 0 9.86667 0 8.2C0 5.7 0.804167 3.70833 2.4125 2.225C4.02083 0.741667 5.88333 0 8 0C10.1167 0 11.9792 0.741667 13.5875 2.225C15.1958 3.70833 16 5.7 16 8.2C16 9.86667 15.3375 11.6792 14.0125 13.6375C12.6875 15.5958 10.6833 17.7167 8 20Z"
+                  fill="#0058BC"
+                />
+              </svg>
+              <h4>Lokasi</h4>
+            </div>
             <div
-              class="margin-52"
-              data-stitch-node-id="node-46"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
+              class="toggle-mock active-toggle"
+              onclick="toggleSwitch(this, event)"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bottom-navbar-50">
+          <div class="link-active-tab-beranda-51">
+            <div class="margin-52">
               <svg
                 class="icon-ui-53"
                 width="16"
@@ -555,35 +306,12 @@
                 />
               </svg>
             </div>
-            <div
-              class="layout-container-54"
-              data-stitch-node-id="node-47"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Container"
-            >
-              <span
-                class="text-content-55"
-                data-stitch-node-id="node-48"
-                data-stitch-node-type="TEXT"
-                data-stitch-node-name="Text"
-                data-stitch-text="true"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]'
-                >Beranda</span
-              >
+            <div class="layout-container-54">
+              <span class="text-content-55">Beranda</span>
             </div>
           </div>
-          <div
-            class="link-inactive-tab-cari-56"
-            data-stitch-node-id="node-49"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Link - Inactive Tab: Cari"
-          >
-            <div
-              class="margin-57"
-              data-stitch-node-id="node-50"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
+          <div class="link-inactive-tab-cari-56">
+            <div class="margin-57">
               <svg
                 class="icon-ui-58"
                 width="18"
@@ -598,35 +326,12 @@
                 />
               </svg>
             </div>
-            <div
-              class="margin-59"
-              data-stitch-node-id="node-51"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
-              <span
-                class="text-content-60"
-                data-stitch-node-id="node-52"
-                data-stitch-node-type="TEXT"
-                data-stitch-node-name="Text"
-                data-stitch-text="true"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]'
-                >Cari</span
-              >
+            <div class="margin-59">
+              <span class="text-content-60">Cari</span>
             </div>
           </div>
-          <div
-            class="link-inactive-tab-riwayat-61"
-            data-stitch-node-id="node-53"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Link - Inactive Tab: Riwayat"
-          >
-            <div
-              class="margin-62"
-              data-stitch-node-id="node-54"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
+          <div class="link-inactive-tab-riwayat-61">
+            <div class="margin-62">
               <svg
                 class="icon-ui-63"
                 width="20"
@@ -641,36 +346,12 @@
                 />
               </svg>
             </div>
-            <div
-              class="margin-64"
-              data-stitch-node-id="node-55"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
-              <span
-                class="text-content-65"
-                data-stitch-node-id="node-56"
-                data-stitch-node-type="TEXT"
-                data-stitch-node-name="Text"
-                data-stitch-text="true"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]'
-                >Estimasi</span
-              >
+            <div class="margin-64">
+              <span class="text-content-65">Estimasi</span>
             </div>
           </div>
-          <div
-            class="link-inactive-tab-setelan-66"
-            data-stitch-node-id="node-57"
-            data-stitch-node-type="FRAME"
-            data-stitch-node-name="Link - Inactive Tab: Setelan"
-            data-stitch-fills='[{"type":"SOLID","color":{"r":0.4,"g":0.3922,"b":0.8941,"a":1},"opacity":1}]'
-          >
-            <div
-              class="margin-67"
-              data-stitch-node-id="node-58"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
+          <div class="link-inactive-tab-setelan-66">
+            <div class="margin-67">
               <svg
                 class="icon-ui-68"
                 width="21"
@@ -680,33 +361,17 @@
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.3 20L6.9 16.8C6.68333 16.7167 6.47917 16.6167 6.2875 16.5C6.09583 16.3833 5.90833 16.2583 5.725 16.125L2.75 17.375L0 12.625L2.575 10.675C2.55833 10.5583 2.55 10.4458 2.55 10.3375C2.55 10.2292 2.55 10.1167 2.55 10C2.55 9.88333 2.55 9.77083 2.55 9.6625C2.55 9.55417 2.55833 9.44167 2.575 9.325L0 7.375L2.75 2.625L5.725 3.875C5.90833 3.74167 6.1 3.61667 6.3 3.5C6.5 3.38333 6.7 3.28333 6.9 3.2L7.3 0H12.8L13.2 3.2C13.4167 3.28333 13.6208 3.38333 13.8125 3.5C14.0042 3.61667 14.1917 3.74167 14.375 3.875L17.35 2.625L20.1 7.375L17.525 9.325C17.5417 9.44167 17.55 9.55417 17.55 9.6625C17.55 9.77083 17.55 9.88333 17.55 10C17.55 10.1167 17.55 10.2292 17.55 10.3375C17.55 10.4458 17.5333 10.5583 17.5 10.675L20.075 12.625L17.325 17.375L14.375 16.125C14.1917 16.2583 14 16.3833 13.8 16.5C13.6 16.6167 13.4 16.7167 13.2 16.8L12.8 20H7.3ZM10.1 13.5C11.0667 13.5 11.8917 13.1583 12.575 12.475C13.2583 11.7917 13.6 10.9667 13.6 10C13.6 9.03333 13.2583 8.20833 12.575 7.525C11.8917 6.84167 11.0667 6.5 10.1 6.5C9.11667 6.5 8.2875 6.84167 7.6125 7.525C6.9375 8.20833 6.6 9.03333 6.6 10C6.6 10.9667 6.9375 11.7917 7.6125 12.475C8.2875 13.1583 9.11667 13.5 10.1 13.5Z"
+                  d="M7.3 20L6.9 16.8C6.68333 16.7167 6.47917 16.6167 6.2875 16.5C6.09583 16.3833 5.90833 16.2583 5.725 16.125L2.75 17.375L0 12.625L2.575 10.675C2.55833 10.5583 2.55 10.4458 2.55 10.3375C2.55 10.2292 2.55 10.1167 2.55 10C2.55 9.88333 2.55 9.77083 2.55 9.6625C2.55 9.55417 2.55 9.44167 2.575 9.325L0 7.375L2.75 2.625L5.725 3.875C5.90833 3.74167 6.1 3.61667 6.3 3.5C6.5 3.38333 6.7 3.28333 6.9 3.2L7.3 0H12.8L13.2 3.2C13.4167 3.28333 13.6208 3.38333 13.8125 3.5C14.0042 3.61667 14.1917 3.74167 14.375 3.875L17.35 2.625L20.1 7.375L17.525 9.325C17.5417 9.44167 17.55 9.55417 17.55 9.6625C17.55 9.77083 17.55 9.88333 17.55 10C17.55 10.1167 17.55 10.2292 17.55 10.3375C17.55 10.4458 17.5333 10.5583 17.5 10.675L20.075 12.625L17.325 17.375L14.375 16.125C14.1917 16.2583 14 16.3833 13.8 16.5C13.6 16.6167 13.4 16.7167 13.2 16.8L12.8 20H7.3ZM10.1 13.5C11.0667 13.5 11.8917 13.1583 12.575 12.475C13.2583 11.7917 13.6 10.9667 13.6 10C13.6 9.03333 13.2583 8.20833 12.575 7.525C11.8917 6.84167 11.0667 6.5 10.1 6.5C9.11667 6.5 8.2875 6.84167 7.6125 7.525C6.9375 8.20833 6.6 9.03333 6.6 10C6.6 10.9667 6.9375 11.7917 7.6125 12.475C8.2875 13.1583 9.11667 13.5 10.1 13.5Z"
                   fill="#FFFBFF"
                 />
               </svg>
             </div>
-            <div
-              class="margin-69"
-              data-stitch-node-id="node-59"
-              data-stitch-node-type="FRAME"
-              data-stitch-node-name="Margin"
-            >
-              <span
-                class="text-content-70"
-                data-stitch-node-id="node-60"
-                data-stitch-node-type="TEXT"
-                data-stitch-node-name="Text"
-                data-stitch-text="true"
-                data-stitch-fills='[{"type":"SOLID","color":{"r":1,"g":0.9843,"b":1,"a":1},"opacity":1}]'
-                >Setelan</span
-              >
+            <div class="margin-69">
+              <span class="text-content-70">Setelan</span>
             </div>
           </div>
         </div>
       </div>
     </main>
-    <script type="application/json" id="stitch-export-diagnostics">
-      {"version":1,"kind":"stitch-figma-export-diagnostics","stats":{"selectedNodeCount":1,"renderedNodeCount":70,"assetCount":10,"width":390,"height":884,"outputChars":0,"diagnosticNodeCount":60,"imageFillCount":0,"cropImageFillCount":0},"nodes":[{"id":"node-1","className":"halaman-setelan-terbaru-1","name":"Halaman Setelan Terbaru","type":"FRAME","bounds":{"x":-578,"y":10173,"width":390,"height":884},"relativeBounds":{"x":0,"y":0,"width":390,"height":884},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1},{"type":"SOLID","color":{"r":0.9804,"g":0.9765,"b":0.9961,"a":1},"opacity":1}]},{"id":"node-2","className":"main-canvas-section-2","name":"Main Canvas → Section","type":"FRAME","bounds":{"x":-578,"y":10261,"width":390,"height":344},"relativeBounds":{"x":0,"y":88,"width":390,"height":344},"fills":[]},{"id":"node-3","className":"bg-layer-3","name":"Background","type":"FRAME","bounds":{"x":-558,"y":10261,"width":350,"height":56},"relativeBounds":{"x":20,"y":0,"width":350,"height":56},"fills":[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]},{"id":"node-4","className":"layout-container-4","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10277,"width":148.58,"height":24},"relativeBounds":{"x":16,"y":16,"width":148.58,"height":24},"fills":[]},{"id":"node-5","className":"layout-container-5","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10280.25,"width":18,"height":17.5},"relativeBounds":{"x":0,"y":3.25,"width":18,"height":17.5},"fills":[]},{"id":"node-6","className":"layout-container-7","name":"Container","type":"FRAME","bounds":{"x":-508,"y":10277,"width":114.58,"height":24},"relativeBounds":{"x":34,"y":0,"width":114.58,"height":24},"fills":[]},{"id":"node-7","className":"text-content-8","name":"Text","type":"TEXT","bounds":{"x":-508,"y":10277,"width":114.58,"height":24},"relativeBounds":{"x":0,"y":0,"width":114.58,"height":24},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-8","className":"bg-layer-9","name":"Background","type":"FRAME","bounds":{"x":-272,"y":10277,"width":48,"height":24},"relativeBounds":{"x":286,"y":16,"width":48,"height":24},"fills":[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]},{"id":"node-9","className":"bg-layer-10","name":"Background","type":"RECTANGLE","bounds":{"x":-244,"y":10281,"width":16,"height":16},"relativeBounds":{"x":28,"y":4,"width":16,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-10","className":"bg-layer-11","name":"Background","type":"FRAME","bounds":{"x":-558,"y":10333,"width":350,"height":56},"relativeBounds":{"x":20,"y":72,"width":350,"height":56},"fills":[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]},{"id":"node-11","className":"layout-container-12","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10349,"width":100.03,"height":24},"relativeBounds":{"x":16,"y":16,"width":100.03,"height":24},"fills":[]},{"id":"node-12","className":"layout-container-13","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10352,"width":24,"height":18},"relativeBounds":{"x":0,"y":3,"width":24,"height":18},"fills":[]},{"id":"node-13","className":"layout-container-15","name":"Container","type":"FRAME","bounds":{"x":-502,"y":10349,"width":60.03,"height":24},"relativeBounds":{"x":40,"y":0,"width":60.03,"height":24},"fills":[]},{"id":"node-14","className":"text-content-16","name":"Text","type":"TEXT","bounds":{"x":-502,"y":10349,"width":60.03,"height":24},"relativeBounds":{"x":0,"y":0,"width":60.03,"height":24},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-15","className":"bg-layer-17","name":"Background","type":"FRAME","bounds":{"x":-272,"y":10349,"width":48,"height":24},"relativeBounds":{"x":286,"y":16,"width":48,"height":24},"fills":[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]},{"id":"node-16","className":"bg-layer-18","name":"Background","type":"RECTANGLE","bounds":{"x":-244,"y":10353,"width":16,"height":16},"relativeBounds":{"x":28,"y":4,"width":16,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-17","className":"bg-layer-19","name":"Background","type":"FRAME","bounds":{"x":-558,"y":10405,"width":350,"height":56},"relativeBounds":{"x":20,"y":144,"width":350,"height":56},"fills":[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]},{"id":"node-18","className":"layout-container-20","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10421,"width":102.64,"height":24},"relativeBounds":{"x":16,"y":16,"width":102.64,"height":24},"fills":[]},{"id":"node-19","className":"layout-container-21","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10423,"width":16,"height":20},"relativeBounds":{"x":0,"y":2,"width":16,"height":20},"fills":[]},{"id":"node-20","className":"layout-container-23","name":"Container","type":"FRAME","bounds":{"x":-510,"y":10421,"width":70.64,"height":24},"relativeBounds":{"x":32,"y":0,"width":70.64,"height":24},"fills":[]},{"id":"node-21","className":"text-content-24","name":"Text","type":"TEXT","bounds":{"x":-510,"y":10421,"width":70.64,"height":24},"relativeBounds":{"x":0,"y":0,"width":70.64,"height":24},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-22","className":"bg-layer-25","name":"Background","type":"FRAME","bounds":{"x":-272,"y":10421,"width":48,"height":24},"relativeBounds":{"x":286,"y":16,"width":48,"height":24},"fills":[{"type":"SOLID","color":{"r":0.8902,"g":0.8863,"b":0.9059,"a":1},"opacity":1}]},{"id":"node-23","className":"bg-layer-26","name":"Background","type":"RECTANGLE","bounds":{"x":-268,"y":10425,"width":16,"height":16},"relativeBounds":{"x":4,"y":4,"width":16,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-24","className":"bg-layer-27","name":"Background","type":"FRAME","bounds":{"x":-558,"y":10477,"width":350,"height":56},"relativeBounds":{"x":20,"y":216,"width":350,"height":56},"fills":[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]},{"id":"node-25","className":"layout-container-28","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10493,"width":134.61,"height":24},"relativeBounds":{"x":16,"y":16,"width":134.61,"height":24},"fills":[]},{"id":"node-26","className":"layout-container-29","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10495.5,"width":14,"height":19},"relativeBounds":{"x":0,"y":2.5,"width":14,"height":19},"fills":[]},{"id":"node-27","className":"layout-container-31","name":"Container","type":"FRAME","bounds":{"x":-512,"y":10493,"width":104.61,"height":24},"relativeBounds":{"x":30,"y":0,"width":104.61,"height":24},"fills":[]},{"id":"node-28","className":"text-content-32","name":"Text","type":"TEXT","bounds":{"x":-512,"y":10493,"width":104.61,"height":24},"relativeBounds":{"x":0,"y":0,"width":104.61,"height":24},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-29","className":"bg-layer-33","name":"Background","type":"FRAME","bounds":{"x":-272,"y":10493,"width":48,"height":24},"relativeBounds":{"x":286,"y":16,"width":48,"height":24},"fills":[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]},{"id":"node-30","className":"bg-layer-34","name":"Background","type":"RECTANGLE","bounds":{"x":-244,"y":10497,"width":16,"height":16},"relativeBounds":{"x":28,"y":4,"width":16,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-31","className":"bg-layer-35","name":"Background","type":"FRAME","bounds":{"x":-558,"y":10549,"width":350,"height":56},"relativeBounds":{"x":20,"y":288,"width":350,"height":56},"fills":[{"type":"SOLID","color":{"r":0.9569,"g":0.9529,"b":0.9725,"a":1},"opacity":1}]},{"id":"node-32","className":"layout-container-36","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10565,"width":80.73,"height":24},"relativeBounds":{"x":16,"y":16,"width":80.73,"height":24},"fills":[]},{"id":"node-33","className":"layout-container-37","name":"Container","type":"FRAME","bounds":{"x":-542,"y":10567,"width":16,"height":20},"relativeBounds":{"x":0,"y":2,"width":16,"height":20},"fills":[]},{"id":"node-34","className":"layout-container-39","name":"Container","type":"FRAME","bounds":{"x":-510,"y":10565,"width":48.73,"height":24},"relativeBounds":{"x":32,"y":0,"width":48.73,"height":24},"fills":[]},{"id":"node-35","className":"text-content-40","name":"Text","type":"TEXT","bounds":{"x":-510,"y":10565,"width":48.73,"height":24},"relativeBounds":{"x":0,"y":0,"width":48.73,"height":24},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-36","className":"bg-layer-41","name":"Background","type":"FRAME","bounds":{"x":-272,"y":10565,"width":48,"height":24},"relativeBounds":{"x":286,"y":16,"width":48,"height":24},"fills":[{"type":"SOLID","color":{"r":0,"g":0.3451,"b":0.7373,"a":1},"opacity":1}]},{"id":"node-37","className":"bg-layer-42","name":"Background","type":"RECTANGLE","bounds":{"x":-244,"y":10569,"width":16,"height":16},"relativeBounds":{"x":28,"y":4,"width":16,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-38","className":"top-appbar-43","name":"Header - TopAppBar","type":"FRAME","bounds":{"x":-578,"y":10173,"width":390,"height":64},"relativeBounds":{"x":0,"y":0,"width":390,"height":64},"fills":[{"type":"SOLID","color":{"r":0.9804,"g":0.9765,"b":0.9961,"a":1},"opacity":1}]},{"id":"node-39","className":"layout-container-44","name":"Container","type":"FRAME","bounds":{"x":-558,"y":10185,"width":120.48,"height":40},"relativeBounds":{"x":20,"y":12,"width":120.48,"height":40},"fills":[]},{"id":"node-40","className":"btn-action-45","name":"Button","type":"FRAME","bounds":{"x":-558,"y":10185,"width":40,"height":40},"relativeBounds":{"x":0,"y":0,"width":40,"height":40},"fills":[]},{"id":"node-41","className":"layout-container-46","name":"Container","type":"FRAME","bounds":{"x":-546,"y":10197,"width":16,"height":16},"relativeBounds":{"x":12,"y":12,"width":16,"height":16},"fills":[]},{"id":"node-42","className":"title-1-48","name":"Heading 1","type":"FRAME","bounds":{"x":-510,"y":10191,"width":72.48,"height":28},"relativeBounds":{"x":48,"y":6,"width":72.48,"height":28},"fills":[]},{"id":"node-43","className":"text-content-49","name":"Text","type":"TEXT","bounds":{"x":-510,"y":10191,"width":72.48,"height":28},"relativeBounds":{"x":0,"y":0,"width":72.48,"height":28},"fills":[{"type":"SOLID","color":{"r":0.102,"g":0.1059,"b":0.1216,"a":1},"opacity":1}]},{"id":"node-44","className":"bottom-navbar-50","name":"BottomNavBar","type":"FRAME","bounds":{"x":-578,"y":10991,"width":390,"height":66},"relativeBounds":{"x":0,"y":818,"width":390,"height":66},"fills":[{"type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1},"opacity":1}]},{"id":"node-45","className":"link-active-tab-beranda-51","name":"Link - Active Tab: Beranda","type":"FRAME","bounds":{"x":-552.34,"y":11002,"width":76.25,"height":44},"relativeBounds":{"x":25.66,"y":11,"width":76.25,"height":44},"fills":[]},{"id":"node-46","className":"margin-52","name":"Margin","type":"FRAME","bounds":{"x":-522.22,"y":11006,"width":16,"height":20},"relativeBounds":{"x":30.12,"y":4,"width":16,"height":20},"fills":[]},{"id":"node-47","className":"layout-container-54","name":"Container","type":"FRAME","bounds":{"x":-536.34,"y":11026,"width":44.25,"height":16},"relativeBounds":{"x":16,"y":24,"width":44.25,"height":16},"fills":[]},{"id":"node-48","className":"text-content-55","name":"Text","type":"TEXT","bounds":{"x":-536.34,"y":11026,"width":44.25,"height":16},"relativeBounds":{"x":0,"y":0,"width":44.25,"height":16},"fills":[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]},{"id":"node-49","className":"link-inactive-tab-cari-56","name":"Link - Inactive Tab: Cari","type":"FRAME","bounds":{"x":-456.79,"y":11000,"width":53.75,"height":48},"relativeBounds":{"x":121.21,"y":9,"width":53.75,"height":48},"fills":[]},{"id":"node-50","className":"margin-57","name":"Margin","type":"FRAME","bounds":{"x":-438.91,"y":11004,"width":18,"height":20},"relativeBounds":{"x":17.88,"y":4,"width":18,"height":20},"fills":[]},{"id":"node-51","className":"margin-59","name":"Margin","type":"FRAME","bounds":{"x":-440.79,"y":11024,"width":21.75,"height":20},"relativeBounds":{"x":16,"y":24,"width":21.75,"height":20},"fills":[]},{"id":"node-52","className":"text-content-60","name":"Text","type":"TEXT","bounds":{"x":-440.79,"y":11028,"width":21.75,"height":16},"relativeBounds":{"x":0,"y":4,"width":21.75,"height":16},"fills":[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]},{"id":"node-53","className":"link-inactive-tab-riwayat-61","name":"Link - Inactive Tab: Riwayat","type":"FRAME","bounds":{"x":-383.74,"y":10999,"width":76.61,"height":50},"relativeBounds":{"x":194.26,"y":8,"width":76.61,"height":50},"fills":[]},{"id":"node-54","className":"margin-62","name":"Margin","type":"FRAME","bounds":{"x":-355.43,"y":11003,"width":20,"height":22},"relativeBounds":{"x":28.31,"y":4,"width":20,"height":22},"fills":[]},{"id":"node-55","className":"margin-64","name":"Margin","type":"FRAME","bounds":{"x":-367.74,"y":11025,"width":44.61,"height":20},"relativeBounds":{"x":16,"y":26,"width":44.61,"height":20},"fills":[]},{"id":"node-56","className":"text-content-65","name":"Text","type":"TEXT","bounds":{"x":-367.74,"y":11029,"width":44.61,"height":16},"relativeBounds":{"x":0,"y":4,"width":44.61,"height":16},"fills":[{"type":"SOLID","color":{"r":0.2549,"g":0.2784,"b":0.3333,"a":1},"opacity":1}]},{"id":"node-57","className":"link-inactive-tab-setelan-66","name":"Link - Inactive Tab: Setelan","type":"FRAME","bounds":{"x":-287.83,"y":10999,"width":71.88,"height":50},"relativeBounds":{"x":290.17,"y":8,"width":71.88,"height":50},"fills":[{"type":"SOLID","color":{"r":0.4,"g":0.3922,"b":0.8941,"a":1},"opacity":1}]},{"id":"node-58","className":"margin-67","name":"Margin","type":"FRAME","bounds":{"x":-261.94,"y":11003,"width":20.1,"height":22},"relativeBounds":{"x":25.89,"y":4,"width":20.1,"height":22},"fills":[]},{"id":"node-59","className":"margin-69","name":"Margin","type":"FRAME","bounds":{"x":-271.83,"y":11025,"width":39.88,"height":20},"relativeBounds":{"x":16,"y":26,"width":39.88,"height":20},"fills":[]},{"id":"node-60","className":"text-content-70","name":"Text","type":"TEXT","bounds":{"x":-271.83,"y":11029,"width":39.88,"height":16},"relativeBounds":{"x":0,"y":4,"width":39.88,"height":16},"fills":[{"type":"SOLID","color":{"r":1,"g":0.9843,"b":1,"a":1},"opacity":1}]}]}</script>
-    </script>
   </body>
 </html>

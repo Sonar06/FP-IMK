@@ -1392,3 +1392,494 @@
       text-align: left;
       color: #414755;
     }
+
+    .link-active-tab-beranda-51 {
+      position: absolute;
+      left: 25.66px;
+      top: 11px;
+      width: 76.25px;
+      height: 44px;
+      background-color: #6664e4;
+      border-radius: 9999px;
+    }
+    
+    .margin-52 {
+      position: absolute;
+      left: 30.13px;
+      top: 4px;
+      width: 16px;
+      height: 20px;
+    }
+    
+    .icon-ui-53 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 16px;
+      height: 18px;
+      overflow: hidden;
+    }
+    
+    .layout-container-54 {
+      position: absolute;
+      left: 16px;
+      top: 24px;
+      width: 44.25px;
+      height: 16px;
+    }
+    
+    .text-content-55 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 44.25px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #fffbff;
+    }
+    
+    .link-inactive-tab-cari-56 {
+      position: absolute;
+      left: 121.21px;
+      top: 9px;
+      width: 53.75px;
+      height: 48px;
+    }
+    
+    .margin-57 {
+      position: absolute;
+      left: 17.88px;
+      top: 4px;
+      width: 18px;
+      height: 20px;
+    }
+    
+    .icon-ui-58 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
+    }
+    
+    .margin-59 {
+      position: absolute;
+      left: 16px;
+      top: 24px;
+      width: 21.75px;
+      height: 20px;
+    }
+    
+    .text-content-60 {
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      width: 21.75px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #414755;
+    }
+    
+    .link-inactive-tab-riwayat-108 {
+      position: absolute;
+      left: 194.26px;
+      top: 8px;
+      width: 76.61px;
+      height: 50px;
+    }
+    
+    .margin-109 {
+      position: absolute;
+      left: 28.31px;
+      top: 4px;
+      width: 20px;
+      height: 22px;
+    }
+    
+    .icon-ui-110 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+    }
+    
+    .margin-111 {
+      position: absolute;
+      left: 16px;
+      top: 26px;
+      width: 44.61px;
+      height: 20px;
+    }
+    
+    .text-content-112 {
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      width: 44.61px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #414755;
+    }
+    
+    .link-inactive-tab-setelan-113 {
+      position: absolute;
+      left: 290.17px;
+      top: 8px;
+      width: 71.88px;
+      height: 50px;
+    }
+    
+    .margin-114 {
+      position: absolute;
+      left: 25.89px;
+      top: 4px;
+      width: 20.1px;
+      height: 22px;
+    }
+    
+    .icon-ui-115 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20.1px;
+      height: 20px;
+      overflow: hidden;
+    }
+    
+    .margin-116 {
+      position: absolute;
+      left: 16px;
+      top: 26px;
+      width: 39.88px;
+      height: 20px;
+    }
+    
+    .text-content-117 {
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      width: 39.88px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #414755;
+    }
+    
+  .bottom-nav-bar-92 {
+      position: absolute;
+      left: 0px;
+      top: 855px;
+      width: 390px;
+      height: 72px;
+      background-color: #faf9fe;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      box-shadow: 0px -4px 12px 0px rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn-action-93 {
+      position: absolute;
+      left: 30.66px;
+      top: 9px;
+      width: 60.25px;
+      height: 54px;
+      border-radius: 8px;
+    }
+    
+    .margin-94 {
+      position: absolute;
+      left: 22.12px;
+      top: 8px;
+      width: 16px;
+      height: 22px;
+    }
+    
+    .layout-container-95 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 16px;
+      height: 18px;
+    }
+    
+    .icon-ui-96 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 16px;
+      height: 18px;
+      overflow: hidden;
+    }
+    
+    .layout-container-97 {
+      position: absolute;
+      left: 8px;
+      top: 30px;
+      width: 44.25px;
+      height: 16px;
+    }
+    
+    .text-content-98 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 44.25px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #414755;
+    }
+    
+    .btn-action-99 {
+      position: absolute;
+      left: 120.21px;
+      top: 13px;
+      width: 62.05px;
+      height: 46px;
+      border-radius: 8px;
+    }
+    
+    .margin-100 {
+      position: absolute;
+      left: 22.03px;
+      top: 4px;
+      width: 18px;
+      height: 22px;
+    }
+    
+    .layout-container-101 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 18px;
+      height: 18px;
+    }
+    
+    .icon-ui-102 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
+    }
+    
+    .layout-container-103 {
+      position: absolute;
+      left: 20px;
+      top: 26px;
+      width: 22.05px;
+      height: 16px;
+    }
+    
+    .text-content-104 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 22.05px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #414755;
+    }
+    
+    .btn-action-105 {
+      position: absolute;
+      left: 211.56px;
+      top: 8px;
+      width: 60.61px;
+      height: 56px;
+      background-color: #6664e4;
+      border-radius: 9999px;
+    }
+    
+    .margin-106 {
+      position: absolute;
+      left: 20.3px;
+      top: 8px;
+      width: 20px;
+      height: 24px;
+    }
+    
+    .layout-container-107 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20px;
+      height: 20px;
+    }
+    
+    .icon-ui-108 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+    }
+    
+    .layout-container-109 {
+      position: absolute;
+      left: 8px;
+      top: 32px;
+      width: 44.61px;
+      height: 16px;
+    }
+    
+    .text-content-110 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 44.61px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: center;
+      color:#fffbff;
+    }
+    
+    .btn-action-111 {
+      position: absolute;
+      left: 301.47px;
+      top: 8px;
+      width: 55.88px;
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .margin-112 {
+      position: absolute;
+      left: 17.89px;
+      top: 8px;
+      width: 20.1px;
+      height: 24px;
+    }
+    
+    .layout-container-113 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20.1px;
+      height: 20px;
+    }
+    
+    .icon-ui-114 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20.1px;
+      height: 20px;
+      overflow: hidden;
+    }
+    
+    .layout-container-115 {
+      position: absolute;
+      left: 8px;
+      top: 32px;
+      width: 39.88px;
+      height: 16px;
+    }
+    
+    .text-content-116 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 39.88px;
+      height: 16px;
+      
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 11px;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #414755;
+    }

@@ -1305,3 +1305,34 @@
       text-align: center;
       color: #414755;
     }
+
+    .cari-stasiun-atau-halte-74 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 230.72px;
+  height: 100%; /* Ubah height menjadi 100% agar area ketik lebih luas */
+  
+  /* Tambahan wajib untuk input text */
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #414755;
+}
+
+/* Tambahkan ini untuk mengatur warna teks placeholder (teks bayangan) */
+.cari-stasiun-atau-halte-74::placeholder {
+  color: #414755;
+  opacity: 0.7; /* Bisa disesuaikan jika ingin sedikit lebih pudar */
+}
