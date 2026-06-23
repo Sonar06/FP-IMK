@@ -1,0 +1,3 @@
+/v1     /v1/beranda.html    301
+/v1/    /v1/beranda.html    200
+/       /v2/                301!
